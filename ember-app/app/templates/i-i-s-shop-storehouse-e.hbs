@@ -1,4 +1,9 @@
-<h3 class="ui header">{{t "forms.i-i-s-shop-storehouse-e.caption"}}</h3>
+<h3 class="ui header">{{t "forms.i-i-s-shop-storehouse-e.caption"}}
+  {{#unless model.isNew}}
+    №
+    {{model.productCode}}
+  {{/unless}}
+</h3>
 
 <form class="ui form flexberry-vertical-form" role="form">
   {{flexberry-error error=error}}
@@ -27,20 +32,13 @@
   <div class="field">
     {{flexberry-field
       readonly=readonly
-      value=model.number
-      class=(if (v-get validationObject "number" "isInvalid") "error")
-      label=(t "forms.i-i-s-shop-storehouse-e.number-caption")
-    }}
-    {{flexberry-validationmessage error=(v-get validationObject "number" "messages")}}
-  </div>
-  <div class="field">
-    {{flexberry-field
-      readonly=readonly
       value=model.address
       class=(if (v-get validationObject "address" "isInvalid") "error")
       label=(t "forms.i-i-s-shop-storehouse-e.address-caption")
     }}
-    {{flexberry-validationmessage error=(v-get validationObject "address" "messages")}}
+    {{flexberry-validationmessage
+      error=(v-get validationObject "address" "messages")
+    }}
   </div>
   <div class="field">
     <label>{{t "forms.i-i-s-shop-storehouse-e.storekeeper-caption"}}</label>
@@ -56,7 +54,9 @@
       readonly=readonly
       componentName="storekeeperLookup"
     }}
-    {{flexberry-validationmessage error=(v-get validationObject "storekeeper" "messages")}}
+    {{flexberry-validationmessage
+      error=(v-get validationObject "storekeeper" "messages")
+    }}
   </div>
 
   <div class="field">
@@ -70,6 +70,8 @@
       orderable=false
       class=(if (v-get validationObject "storeProduct" "isInvalid") "error")
     }}
-    {{flexberry-validationmessage error=(v-get validationObject "storeProduct" "messages")}}
+    {{flexberry-validationmessage
+      error=(v-get validationObject "storeProduct" "messages")
+    }}
   </div>
 </form>

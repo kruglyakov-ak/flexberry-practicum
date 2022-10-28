@@ -3,6 +3,7 @@ import $ from 'jquery';
 import DS from 'ember-data';
 import { validator } from 'ember-cp-validations';
 import { attr, belongsTo, hasMany } from 'ember-flexberry-data/utils/attributes';
+import InvoiceStatusEnum from '../../../transforms/i-i-s-shop-invoice-status';
 
 export let Model = Mixin.create({
   status: DS.attr('i-i-s-shop-invoice-status', { defaultValue: InvoiceStatusEnum.New }),

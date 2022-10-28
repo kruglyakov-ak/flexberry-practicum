@@ -1,4 +1,9 @@
-<h3 class="ui header">{{t "forms.i-i-s-shop-invoice-e.caption"}}</h3>
+<h3 class="ui header">{{t "forms.i-i-s-shop-invoice-e.caption"}}
+  {{#unless model.isNew}}
+    №
+    {{model.number}}
+  {{/unless}}
+</h3>
 
 <form class="ui form flexberry-vertical-form" role="form">
   {{flexberry-error error=error}}
@@ -31,19 +36,22 @@
       value=model.status
       readonly=readonly
     }}
-    {{flexberry-validationmessage error=(v-get validationObject "status" "messages")}}
+    {{flexberry-validationmessage
+      error=(v-get validationObject "status" "messages")
+    }}
   </div>
   <div class="field">
     <label>{{t "forms.i-i-s-shop-invoice-e.shipmentDateTime-caption"}}</label>
-    {{
-      flexberry-simpledatetime
+    {{flexberry-simpledatetime
       type="date"
-      placeholder=(t 'components.flexberry-datepicker.placeholder')
+      placeholder=(t "components.flexberry-datepicker.placeholder")
       readonly=readonly
       value=model.shipmentDateTime
       class=(if (v-get validationObject "shipmentDateTime" "isInvalid") "error")
     }}
-    {{flexberry-validationmessage error=(v-get validationObject "shipmentDateTime" "messages")}}
+    {{flexberry-validationmessage
+      error=(v-get validationObject "shipmentDateTime" "messages")
+    }}
   </div>
 
   <div class="field">
@@ -53,7 +61,9 @@
       class=(if (v-get validationObject "totalSum" "isInvalid") "error")
       label=(t "forms.i-i-s-shop-invoice-e.totalSum-caption")
     }}
-    {{flexberry-validationmessage error=(v-get validationObject "totalSum" "messages")}}
+    {{flexberry-validationmessage
+      error=(v-get validationObject "totalSum" "messages")
+    }}
   </div>
   <div class="field">
     {{flexberry-field
@@ -62,7 +72,9 @@
       class=(if (v-get validationObject "totalWeight" "isInvalid") "error")
       label=(t "forms.i-i-s-shop-invoice-e.totalWeight-caption")
     }}
-    {{flexberry-validationmessage error=(v-get validationObject "totalWeight" "messages")}}
+    {{flexberry-validationmessage
+      error=(v-get validationObject "totalWeight" "messages")
+    }}
   </div>
   <div class="field">
     {{flexberry-field
@@ -71,7 +83,9 @@
       class=(if (v-get validationObject "note" "isInvalid") "error")
       label=(t "forms.i-i-s-shop-invoice-e.note-caption")
     }}
-    {{flexberry-validationmessage error=(v-get validationObject "note" "messages")}}
+    {{flexberry-validationmessage
+      error=(v-get validationObject "note" "messages")
+    }}
   </div>
   <div class="field">
     {{flexberry-field
@@ -80,28 +94,22 @@
       class=(if (v-get validationObject "customerName" "isInvalid") "error")
       label=(t "forms.i-i-s-shop-invoice-e.customerName-caption")
     }}
-    {{flexberry-validationmessage error=(v-get validationObject "customerName" "messages")}}
-  </div>
-  <div class="field">
-    {{flexberry-field
-      readonly=readonly
-      value=model.number
-      class=(if (v-get validationObject "number" "isInvalid") "error")
-      label=(t "forms.i-i-s-shop-invoice-e.number-caption")
+    {{flexberry-validationmessage
+      error=(v-get validationObject "customerName" "messages")
     }}
-    {{flexberry-validationmessage error=(v-get validationObject "number" "messages")}}
   </div>
   <div class="field">
     <label>{{t "forms.i-i-s-shop-invoice-e.createDate-caption"}}</label>
-    {{
-      flexberry-simpledatetime
+    {{flexberry-simpledatetime
       type="date"
-      placeholder=(t 'components.flexberry-datepicker.placeholder')
+      placeholder=(t "components.flexberry-datepicker.placeholder")
       readonly=readonly
       value=model.createDate
       class=(if (v-get validationObject "createDate" "isInvalid") "error")
     }}
-    {{flexberry-validationmessage error=(v-get validationObject "createDate" "messages")}}
+    {{flexberry-validationmessage
+      error=(v-get validationObject "createDate" "messages")
+    }}
   </div>
 
   <div class="field">
@@ -118,7 +126,9 @@
       readonly=readonly
       componentName="orderLookup"
     }}
-    {{flexberry-validationmessage error=(v-get validationObject "order" "messages")}}
+    {{flexberry-validationmessage
+      error=(v-get validationObject "order" "messages")
+    }}
   </div>
 
   <div class="field">
@@ -135,7 +145,9 @@
       readonly=readonly
       componentName="responsiblePersonLookup"
     }}
-    {{flexberry-validationmessage error=(v-get validationObject "responsiblePerson" "messages")}}
+    {{flexberry-validationmessage
+      error=(v-get validationObject "responsiblePerson" "messages")
+    }}
   </div>
 
   <div class="field">
@@ -149,6 +161,8 @@
       orderable=false
       class=(if (v-get validationObject "invoiceItem" "isInvalid") "error")
     }}
-    {{flexberry-validationmessage error=(v-get validationObject "invoiceItem" "messages")}}
+    {{flexberry-validationmessage
+      error=(v-get validationObject "invoiceItem" "messages")
+    }}
   </div>
 </form>

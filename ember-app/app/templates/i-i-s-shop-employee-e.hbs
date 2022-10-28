@@ -1,4 +1,9 @@
-<h3 class="ui header">{{t "forms.i-i-s-shop-employee-e.caption"}}</h3>
+<h3 class="ui header">
+  {{t "forms.i-i-s-shop-employee-e.caption"}}
+  {{#unless model.isNew}}
+    № {{model.number}}
+  {{/unless}}
+</h3>
 
 <form class="ui form flexberry-vertical-form" role="form">
   {{flexberry-error error=error}}
@@ -27,20 +32,13 @@
   <div class="field">
     {{flexberry-field
       readonly=readonly
-      value=model.number
-      class=(if (v-get validationObject "number" "isInvalid") "error")
-      label=(t "forms.i-i-s-shop-employee-e.number-caption")
-    }}
-    {{flexberry-validationmessage error=(v-get validationObject "number" "messages")}}
-  </div>
-  <div class="field">
-    {{flexberry-field
-      readonly=readonly
       value=model.lastName
       class=(if (v-get validationObject "lastName" "isInvalid") "error")
       label=(t "forms.i-i-s-shop-employee-e.lastName-caption")
     }}
-    {{flexberry-validationmessage error=(v-get validationObject "lastName" "messages")}}
+    {{flexberry-validationmessage
+      error=(v-get validationObject "lastName" "messages")
+    }}
   </div>
   <div class="field">
     {{flexberry-field
@@ -49,7 +47,9 @@
       class=(if (v-get validationObject "firstName" "isInvalid") "error")
       label=(t "forms.i-i-s-shop-employee-e.firstName-caption")
     }}
-    {{flexberry-validationmessage error=(v-get validationObject "firstName" "messages")}}
+    {{flexberry-validationmessage
+      error=(v-get validationObject "firstName" "messages")
+    }}
   </div>
   <div class="field">
     {{flexberry-field
@@ -58,7 +58,9 @@
       class=(if (v-get validationObject "middleName" "isInvalid") "error")
       label=(t "forms.i-i-s-shop-employee-e.middleName-caption")
     }}
-    {{flexberry-validationmessage error=(v-get validationObject "middleName" "messages")}}
+    {{flexberry-validationmessage
+      error=(v-get validationObject "middleName" "messages")
+    }}
   </div>
   <div class="field">
     {{flexberry-field
@@ -67,7 +69,9 @@
       class=(if (v-get validationObject "phoneNumber" "isInvalid") "error")
       label=(t "forms.i-i-s-shop-employee-e.phoneNumber-caption")
     }}
-    {{flexberry-validationmessage error=(v-get validationObject "phoneNumber" "messages")}}
+    {{flexberry-validationmessage
+      error=(v-get validationObject "phoneNumber" "messages")
+    }}
   </div>
   <div class="field">
     {{flexberry-field
@@ -76,7 +80,9 @@
       class=(if (v-get validationObject "email" "isInvalid") "error")
       label=(t "forms.i-i-s-shop-employee-e.email-caption")
     }}
-    {{flexberry-validationmessage error=(v-get validationObject "email" "messages")}}
+    {{flexberry-validationmessage
+      error=(v-get validationObject "email" "messages")
+    }}
   </div>
   <div class="field">
     <label>{{t "forms.i-i-s-shop-employee-e.position-caption"}}</label>
@@ -85,6 +91,8 @@
       value=model.position
       readonly=readonly
     }}
-    {{flexberry-validationmessage error=(v-get validationObject "position" "messages")}}
+    {{flexberry-validationmessage
+      error=(v-get validationObject "position" "messages")
+    }}
   </div>
 </form>
