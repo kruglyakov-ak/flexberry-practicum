@@ -44,7 +44,7 @@
     {{flexberry-simpledatetime
       type="date"
       placeholder=(t "components.flexberry-datepicker.placeholder")
-      readonly=readonly
+      readonly=true
       value=model.shipmentDate
       class=(if (v-get validationObject "shipmentDate" "isInvalid") "error")
     }}
@@ -69,7 +69,7 @@
 
   <div class="field">
     {{flexberry-field
-      readonly=readonly
+      readonly=true
       value=model.totalSum
       class=(if (v-get validationObject "totalSum" "isInvalid") "error")
       label=(t "forms.i-i-s-shop-order-e.totalSum-caption")
@@ -84,7 +84,7 @@
     {{flexberry-simpledatetime
       type="date"
       placeholder=(t "components.flexberry-datepicker.placeholder")
-      readonly=readonly
+      readonly=true
       value=model.createDate
       class=(if (v-get validationObject "createDate" "isInvalid") "error")
     }}

@@ -43,7 +43,7 @@
   <div class="field">
     <label>{{t "forms.i-i-s-shop-invoice-e.shipmentDateTime-caption"}}</label>
     {{flexberry-simpledatetime
-      type="date"
+      type="datetime-local"
       placeholder=(t "components.flexberry-datepicker.placeholder")
       readonly=readonly
       value=model.shipmentDateTime
@@ -56,7 +56,7 @@
 
   <div class="field">
     {{flexberry-field
-      readonly=readonly
+      readonly=true
       value=model.totalSum
       class=(if (v-get validationObject "totalSum" "isInvalid") "error")
       label=(t "forms.i-i-s-shop-invoice-e.totalSum-caption")
@@ -67,7 +67,7 @@
   </div>
   <div class="field">
     {{flexberry-field
-      readonly=readonly
+      readonly=true
       value=model.totalWeight
       class=(if (v-get validationObject "totalWeight" "isInvalid") "error")
       label=(t "forms.i-i-s-shop-invoice-e.totalWeight-caption")
@@ -103,7 +103,7 @@
     {{flexberry-simpledatetime
       type="date"
       placeholder=(t "components.flexberry-datepicker.placeholder")
-      readonly=readonly
+      readonly=true
       value=model.createDate
       class=(if (v-get validationObject "createDate" "isInvalid") "error")
     }}
@@ -157,7 +157,7 @@
       mainModelProjection=modelProjection
       modelProjection=modelProjection.attributes.invoiceItem
       content=model.invoiceItem
-      readonly=readonly
+      readonly=true
       orderable=false
       class=(if (v-get validationObject "invoiceItem" "isInvalid") "error")
     }}
