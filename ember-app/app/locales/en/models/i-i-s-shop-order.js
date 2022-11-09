@@ -23,6 +23,12 @@ export default {
         __caption__: 'manager',
         lastName: {
           __caption__: 'lastName'
+        },
+        firstName: {
+          __caption__: 'firstName'
+        },
+        middleName: {
+          __caption__: 'middleName'
         }
       },
       orderItem: {
@@ -40,6 +46,9 @@ export default {
           __caption__: 'product',
           name: {
             __caption__: 'name'
+          },
+          productCode: {
+            __caption__: 'productCode'
           }
         }
       }

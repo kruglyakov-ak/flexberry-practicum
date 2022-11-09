@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C096F79E-C116-40E0-A2C9-4A29A04384CE}</ProjectGuid>
+    <ProjectGuid>{D670017F-7B95-4090-AB08-F96E80355270}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -84,7 +84,7 @@
       <HintPath>System.EnterpriseServices</HintPath>
     </Reference>
     <ProjectReference Include="..\Objects\Shop.Objects.csproj">
-      <Project>{1fce6625-6853-48ca-8cfc-e2427436862d}</Project>
+      <Project>{b2095cc9-4483-4910-81d0-e6abb849772b}</Project>
       <Name>Shop.Objects</Name>
     </ProjectReference>
     <Reference Include="log4net">

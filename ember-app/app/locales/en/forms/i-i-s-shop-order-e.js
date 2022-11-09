@@ -6,6 +6,9 @@ export default {
   'totalSum-caption': 'totalSum',
   'number-caption': 'number',
   'createDate-caption': 'createDate',
+  'manager.lastName-caption': 'manager.lastName',
+  'manager.firstName-caption': 'manager.firstName',
+  'manager.middleName-caption': 'manager.middleName',
   'manager-caption': 'manager',
   'orderItem-caption': 'orderItem'
 };

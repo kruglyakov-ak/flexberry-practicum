@@ -1,6 +1,7 @@
 import { buildValidations } from 'ember-cp-validations';
 import EmberFlexberryDataModel from 'ember-flexberry-data/models/model';
 import OfflineModelMixin from 'ember-flexberry-data/mixins/offline-model';
+import { computed } from "@ember/object";
 
 import {
   defineProjections,
@@ -13,6 +14,12 @@ const Validations = buildValidations(ValidationRules, {
 });
 
 let Model = EmberFlexberryDataModel.extend(OfflineModelMixin, ProductMixin, Validations, {
+  nameWCode: computed('name', 'productCode', function() {
+    let name = this.get('name');
+    let productCode = this.get('productCode');
+
+    return `[${productCode}] ${name}`;
+  }),
 });
 
 defineProjections(Model);

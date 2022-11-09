@@ -1,7 +1,8 @@
 <h3 class="ui header">
   {{t "forms.i-i-s-shop-employee-e.caption"}}
   {{#unless model.isNew}}
-    № {{model.number}}
+    №
+    {{model.number}}
   {{/unless}}
 </h3>
 
@@ -28,6 +29,17 @@
         {{t "forms.edit-form.close-button-text"}}
       </button>
     </div>
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.number
+      class=(if (v-get validationObject "number" "isInvalid") "error")
+      label=(t "forms.i-i-s-shop-employee-e.number-caption")
+    }}
+    {{flexberry-validationmessage
+      error=(v-get validationObject "number" "messages")
+    }}
   </div>
   <div class="field">
     {{flexberry-field

@@ -1,9 +1,8 @@
 import Mixin from '@ember/object/mixin';
-import $ from 'jquery';
 import DS from 'ember-data';
 import { validator } from 'ember-cp-validations';
 import { attr, belongsTo, hasMany } from 'ember-flexberry-data/utils/attributes';
-import InvoiceStatusEnum from '../../../transforms/i-i-s-shop-invoice-status';
+import  InvoiceStatusEnum from '../../../enums/i-i-s-shop-invoice-status';
 
 export let Model = Mixin.create({
   status: DS.attr('i-i-s-shop-invoice-status', { defaultValue: InvoiceStatusEnum.New }),
@@ -106,7 +105,8 @@ export let defineProjections = function (modelClass) {
       price: attr('Цена', { index: 2 }),
       totalSum: attr('Сумма по позиции', { index: 3 }),
       product: belongsTo('i-i-s-shop-product', 'Товар', {
-        name: attr('~', { index: 5, hidden: true })
+        name: attr('~', { index: 5, hidden: true }),
+        productCode: attr('~', { index: 6, hidden: true })
       }, { index: 4, displayMemberPath: 'name' })
     })
   });

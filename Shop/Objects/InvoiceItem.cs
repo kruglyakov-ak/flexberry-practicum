@@ -35,8 +35,10 @@ namespace IIS.Shop
             "Price as \'Цена\'",
             "TotalSum as \'Сумма по позиции\'",
             "Product as \'Товар\'",
-            "Product.Name as \'\'"}, Hidden=new string[] {
-            "Product.Name"})]
+            "Product.Name as \'\'",
+            "Product.ProductCode as \'\'"}, Hidden=new string[] {
+            "Product.Name",
+            "Product.ProductCode"})]
     [MasterViewDefineAttribute("InvoiceItemE", "Product", ICSSoft.STORMNET.LookupTypeEnum.Standard, "", "Name")]
     public class InvoiceItem : ICSSoft.STORMNET.DataObject
     {

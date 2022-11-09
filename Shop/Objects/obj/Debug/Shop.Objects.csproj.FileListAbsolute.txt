@@ -1,3 +1,5 @@
+C:\Users\ALEX\Documents\Flexberry\CodeGen\Shop\Shop\Objects\obj\Debug\Shop.Objects.csproj.AssemblyReference.cache
+C:\Users\ALEX\Documents\Flexberry\CodeGen\Shop\Shop\Objects\obj\Debug\Shop.Objects.csproj.CoreCompileInputs.cache
 C:\Users\ALEX\Documents\Flexberry\CodeGen\Shop\Shop\Objects\bin\Debug\Shop.Objects.xml
 C:\Users\ALEX\Documents\Flexberry\CodeGen\Shop\Shop\Objects\bin\Debug\Shop.Objects.dll
 C:\Users\ALEX\Documents\Flexberry\CodeGen\Shop\Shop\Objects\bin\Debug\Shop.Objects.pdb
@@ -44,8 +46,6 @@ C:\Users\ALEX\Documents\Flexberry\CodeGen\Shop\Shop\Objects\bin\Debug\ICSSoft.ST
 C:\Users\ALEX\Documents\Flexberry\CodeGen\Shop\Shop\Objects\bin\Debug\ICSSoft.STORMNET.UserDataTypes.xml
 C:\Users\ALEX\Documents\Flexberry\CodeGen\Shop\Shop\Objects\bin\Debug\NewPlatform.Flexberry.ORM.CurrentUserService.xml
 C:\Users\ALEX\Documents\Flexberry\CodeGen\Shop\Shop\Objects\bin\Debug\NewPlatform.Flexberry.ORM.UnityFactory.xml
-C:\Users\ALEX\Documents\Flexberry\CodeGen\Shop\Shop\Objects\obj\Debug\Shop.Objects.csproj.AssemblyReference.cache
-C:\Users\ALEX\Documents\Flexberry\CodeGen\Shop\Shop\Objects\obj\Debug\Shop.Objects.csproj.CoreCompileInputs.cache
 C:\Users\ALEX\Documents\Flexberry\CodeGen\Shop\Shop\Objects\obj\Debug\Shop.Objects.csproj.CopyComplete
 C:\Users\ALEX\Documents\Flexberry\CodeGen\Shop\Shop\Objects\obj\Debug\Shop.Objects.dll
 C:\Users\ALEX\Documents\Flexberry\CodeGen\Shop\Shop\Objects\obj\Debug\Shop.Objects.pdb

@@ -11,6 +11,12 @@ export default {
         __caption__: 'storekeeper',
         lastName: {
           __caption__: 'lastName'
+        },
+        firstName: {
+          __caption__: 'firstName'
+        },
+        middleName: {
+          __caption__: 'middleName'
         }
       },
       storeProduct: {
@@ -22,6 +28,9 @@ export default {
           __caption__: 'product',
           name: {
             __caption__: 'name'
+          },
+          productCode: {
+            __caption__: 'productCode'
           }
         }
       }

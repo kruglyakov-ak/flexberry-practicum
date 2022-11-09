@@ -1,9 +1,8 @@
 import Mixin from '@ember/object/mixin';
-import $ from 'jquery';
 import DS from 'ember-data';
 import { validator } from 'ember-cp-validations';
 import { attr, belongsTo, hasMany } from 'ember-flexberry-data/utils/attributes';
-import OrderStatusEnum from '../../../transforms/i-i-s-shop-order-status';
+import  OrderStatusEnum from '../../../enums/i-i-s-shop-order-status';
 
 export let Model = Mixin.create({
   status: DS.attr('i-i-s-shop-order-status', { defaultValue: OrderStatusEnum.New }),
@@ -95,14 +94,17 @@ export let defineProjections = function (modelClass) {
     number: attr('Номер', { index: 4 }),
     createDate: attr('Дата оформления', { index: 5 }),
     manager: belongsTo('i-i-s-shop-employee', 'Менеджер', {
-      lastName: attr('~', { index: 7, hidden: true })
+      lastName: attr('~', { index: 7, hidden: true }),
+      firstName: attr('~', { index: 8, hidden: true }),
+      middleName: attr('~', { index: 9, hidden: true })
     }, { index: 6, displayMemberPath: 'lastName' }),
     orderItem: hasMany('i-i-s-shop-order-item', 'Содержимое заказа', {
       amount: attr('Количество', { index: 0 }),
       priceWTaxes: attr('Цена с налогом', { index: 1 }),
       totalSum: attr('Сумма по позиции', { index: 2 }),
       product: belongsTo('i-i-s-shop-product', 'Товар', {
-        name: attr('~', { index: 4, hidden: true })
+        name: attr('~', { index: 4, hidden: true }),
+        productCode: attr('~', { index: 5, hidden: true })
       }, { index: 3, displayMemberPath: 'name' })
     })
   });

@@ -72,6 +72,18 @@
               "caption": "~",
               "hidden": true,
               "index": 3
+            },
+            {
+              "name": "firstName",
+              "caption": "~",
+              "hidden": true,
+              "index": 4
+            },
+            {
+              "name": "middleName",
+              "caption": "~",
+              "hidden": true,
+              "index": 5
             }
           ],
           "index": 2,

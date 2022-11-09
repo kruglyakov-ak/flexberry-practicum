@@ -103,6 +103,12 @@
               "caption": "~",
               "hidden": true,
               "index": 5
+            },
+            {
+              "name": "productCode",
+              "caption": "~",
+              "hidden": true,
+              "index": 6
             }
           ],
           "index": 4,

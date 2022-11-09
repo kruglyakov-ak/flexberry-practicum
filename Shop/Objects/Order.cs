@@ -16,7 +16,7 @@ namespace IIS.Shop
     
     
     // *** Start programmer edit section *** (Using statements)
-    using ICSSoft.STORMNET.Business;
+
     // *** End programmer edit section *** (Using statements)
 
 
@@ -37,8 +37,12 @@ namespace IIS.Shop
             "Number as \'Номер\'",
             "CreateDate as \'Дата оформления\'",
             "Manager as \'Менеджер\'",
-            "Manager.LastName as \'\'"}, Hidden=new string[] {
-            "Manager.LastName"})]
+            "Manager.LastName as \'\'",
+            "Manager.FirstName as \'\'",
+            "Manager.MiddleName as \'\'"}, Hidden=new string[] {
+            "Manager.LastName",
+            "Manager.FirstName",
+            "Manager.MiddleName"})]
     [AssociatedDetailViewAttribute("OrderE", "OrderItem", "OrderItemE", true, "", "Содержимое заказа", true, new string[] {
             ""})]
     [MasterViewDefineAttribute("OrderE", "Manager", ICSSoft.STORMNET.LookupTypeEnum.Standard, "", "LastName")]
@@ -170,8 +174,8 @@ namespace IIS.Shop
 
         // *** End programmer edit section *** (Order.TotalSum CustomAttributes)
         [ICSSoft.STORMNET.NotStored()]
-        [DataServiceExpression(typeof(SQLDataService), "SELECT SUM(PriceWTaxes * Amount) FROM OrderItem WHERE OrderItem.Order_m0 = STORMM" +
-            "ainObjectKey")]
+        [DataServiceExpression(typeof(ICSSoft.STORMNET.Business.SQLDataService), "SELECT SUM(PriceWTaxes * Amount) FROM OrderItem WHERE OrderItem.Заказ = STORMMain" +
+            "ObjectKey")]
         public virtual double TotalSum
         {
             get

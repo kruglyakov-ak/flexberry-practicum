@@ -33,8 +33,12 @@ namespace IIS.Shop
             "Number as \'Номер\'",
             "Address as \'Адрес\'",
             "Storekeeper as \'Кладовщик\'",
-            "Storekeeper.LastName as \'\'"}, Hidden=new string[] {
-            "Storekeeper.LastName"})]
+            "Storekeeper.LastName as \'\'",
+            "Storekeeper.FirstName as \'\'",
+            "Storekeeper.MiddleName as \'\'"}, Hidden=new string[] {
+            "Storekeeper.LastName",
+            "Storekeeper.FirstName",
+            "Storekeeper.MiddleName"})]
     [AssociatedDetailViewAttribute("StorehouseE", "StoreProduct", "StoreProductE", true, "", "Список товаров", true, new string[] {
             ""})]
     [MasterViewDefineAttribute("StorehouseE", "Storekeeper", ICSSoft.STORMNET.LookupTypeEnum.Standard, "", "LastName")]

@@ -34,8 +34,10 @@ namespace IIS.Shop
             "PriceWTaxes as \'Цена с налогом\'",
             "TotalSum as \'Сумма по позиции\'",
             "Product as \'Товар\'",
-            "Product.Name as \'\'"}, Hidden=new string[] {
-            "Product.Name"})]
+            "Product.Name as \'\'",
+            "Product.ProductCode as \'\'"}, Hidden=new string[] {
+            "Product.Name",
+            "Product.ProductCode"})]
     [MasterViewDefineAttribute("OrderItemE", "Product", ICSSoft.STORMNET.LookupTypeEnum.Standard, "", "Name")]
     [View("OrderItemInOrderL", new string[] {
             "Amount as \'\'",

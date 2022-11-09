@@ -64,7 +64,8 @@ export let defineProjections = function (modelClass) {
     price: attr('Цена', { index: 2 }),
     totalSum: attr('Сумма по позиции', { index: 3 }),
     product: belongsTo('i-i-s-shop-product', 'Товар', {
-      name: attr('~', { index: 5, hidden: true })
+      name: attr('~', { index: 5, hidden: true }),
+      productCode: attr('~', { index: 6, hidden: true })
     }, { index: 4, displayMemberPath: 'name' })
   });
 };

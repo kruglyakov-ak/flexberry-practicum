@@ -3,7 +3,7 @@
     №
     {{model.number}}
   {{/unless}}
-</h3>
+  </h3>
 
 <form class="ui form flexberry-vertical-form" role="form">
   {{flexberry-error error=error}}
@@ -99,6 +99,17 @@
     }}
   </div>
   <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.number
+      class=(if (v-get validationObject "number" "isInvalid") "error")
+      label=(t "forms.i-i-s-shop-invoice-e.number-caption")
+    }}
+    {{flexberry-validationmessage
+      error=(v-get validationObject "number" "messages")
+    }}
+  </div>
+  <div class="field">
     <label>{{t "forms.i-i-s-shop-invoice-e.createDate-caption"}}</label>
     {{flexberry-simpledatetime
       type="date"
@@ -137,7 +148,7 @@
       choose="showLookupDialog"
       remove="removeLookupValue"
       value=model.responsiblePerson
-      displayAttributeName="lastName"
+      displayAttributeName="nameWInitials"
       autocomplete=true
       relationName="responsiblePerson"
       projection="EmployeeL"

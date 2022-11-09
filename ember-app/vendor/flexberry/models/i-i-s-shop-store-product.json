@@ -58,6 +58,12 @@
               "caption": "~",
               "hidden": true,
               "index": 2
+            },
+            {
+              "name": "productCode",
+              "caption": "~",
+              "hidden": true,
+              "index": 3
             }
           ],
           "index": 1,

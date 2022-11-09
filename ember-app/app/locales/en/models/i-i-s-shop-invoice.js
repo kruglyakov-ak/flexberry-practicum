@@ -55,6 +55,9 @@ export default {
           __caption__: 'product',
           name: {
             __caption__: 'name'
+          },
+          productCode: {
+            __caption__: 'productCode'
           }
         }
       }

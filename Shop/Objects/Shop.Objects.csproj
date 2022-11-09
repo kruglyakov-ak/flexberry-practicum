@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1FCE6625-6853-48CA-8CFC-E2427436862D}</ProjectGuid>
+    <ProjectGuid>{B2095CC9-4483-4910-81D0-E6ABB849772B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IIS.Shop</RootNamespace>

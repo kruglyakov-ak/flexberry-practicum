@@ -45,12 +45,15 @@ export let defineProjections = function (modelClass) {
     number: attr('Номер', { index: 0 }),
     address: attr('Адрес', { index: 1 }),
     storekeeper: belongsTo('i-i-s-shop-employee', 'Кладовщик', {
-      lastName: attr('~', { index: 3, hidden: true })
+      lastName: attr('~', { index: 3, hidden: true }),
+      firstName: attr('~', { index: 4, hidden: true }),
+      middleName: attr('~', { index: 5, hidden: true })
     }, { index: 2, displayMemberPath: 'lastName' }),
     storeProduct: hasMany('i-i-s-shop-store-product', 'Список товаров', {
       amount: attr('Количество', { index: 0 }),
       product: belongsTo('i-i-s-shop-product', 'Товар', {
-        name: attr('~', { index: 2, hidden: true })
+        name: attr('~', { index: 2, hidden: true }),
+        productCode: attr('~', { index: 3, hidden: true })
       }, { index: 1, displayMemberPath: 'name' })
     })
   });
