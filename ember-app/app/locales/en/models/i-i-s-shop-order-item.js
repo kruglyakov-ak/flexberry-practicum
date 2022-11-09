@@ -17,6 +17,9 @@ export default {
         },
         productCode: {
           __caption__: 'productCode'
+        },
+        price: {
+          __caption__: 'price'
         }
       }
     },

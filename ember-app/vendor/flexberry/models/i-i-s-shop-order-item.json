@@ -94,6 +94,12 @@
               "caption": "~",
               "hidden": true,
               "index": 5
+            },
+            {
+              "name": "price",
+              "caption": "~",
+              "hidden": true,
+              "index": 6
             }
           ],
           "index": 3,
