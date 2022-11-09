@@ -80,17 +80,6 @@
     }}
   </div>
   <div class="field">
-    {{flexberry-field
-      readonly=readonly
-      value=model.number
-      class=(if (v-get validationObject "number" "isInvalid") "error")
-      label=(t "forms.i-i-s-shop-order-e.number-caption")
-    }}
-    {{flexberry-validationmessage
-      error=(v-get validationObject "number" "messages")
-    }}
-  </div>
-  <div class="field">
     <label>{{t "forms.i-i-s-shop-order-e.createDate-caption"}}</label>
     {{flexberry-simpledatetime
       type="date"

@@ -32,17 +32,6 @@
   <div class="field">
     {{flexberry-field
       readonly=readonly
-      value=model.number
-      class=(if (v-get validationObject "number" "isInvalid") "error")
-      label=(t "forms.i-i-s-shop-storehouse-e.number-caption")
-    }}
-    {{flexberry-validationmessage
-      error=(v-get validationObject "number" "messages")
-    }}
-  </div>
-  <div class="field">
-    {{flexberry-field
-      readonly=readonly
       value=model.address
       class=(if (v-get validationObject "address" "isInvalid") "error")
       label=(t "forms.i-i-s-shop-storehouse-e.address-caption")
