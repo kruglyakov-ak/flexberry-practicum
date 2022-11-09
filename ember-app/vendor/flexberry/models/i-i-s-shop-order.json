@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "IISShopOrder",
   "modelName": "i-i-s-shop-order",
   "className": "Order",
@@ -8,7 +8,7 @@
   "attrs": [
     {
       "name": "status",
-      "type": "i-i-s-shop-order-status",
+      "type": "состояние-заказа",
       "flexberryType": "OrderStatus",
       "notNull": false,
       "defaultValue": "New",
@@ -72,7 +72,7 @@
         },
         {
           "name": "shipmentDate",
-          "caption": "Дата отгрузки",
+          "caption": "Дата отправки",
           "hidden": false,
           "index": 1
         },
@@ -84,7 +84,7 @@
         },
         {
           "name": "totalSum",
-          "caption": "Стоимость заказа",
+          "caption": "Сумма заказа",
           "hidden": false,
           "index": 3
         },
@@ -96,7 +96,7 @@
         },
         {
           "name": "createDate",
-          "caption": "Дата оформления",
+          "caption": "Дата создания",
           "hidden": false,
           "index": 5
         }
@@ -182,7 +182,7 @@
         },
         {
           "name": "createDate",
-          "caption": "Дата оформления",
+          "caption": "Дата создания",
           "hidden": false,
           "index": 5
         }
