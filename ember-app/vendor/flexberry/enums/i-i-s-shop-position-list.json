@@ -2,7 +2,7 @@
   "nameSpace": "IIS.Shop",
   "className": "PositionList",
   "enumObjects": {
-    "Storekeeper": null,
-    "Manager": null
+    "Storekeeper": "Кладовщик",
+    "Manager": "Менеджер"
   }
 }

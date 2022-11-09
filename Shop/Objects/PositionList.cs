@@ -12,6 +12,7 @@ namespace IIS.Shop
 {
     using System;
     using System.Xml;
+    using ICSSoft.STORMNET;
     
     
     // *** Start programmer edit section *** (Using statements)
@@ -34,6 +35,7 @@ namespace IIS.Shop
         // *** Start programmer edit section *** (PositionList.Storekeeper CustomAttributes)
 
         // *** End programmer edit section *** (PositionList.Storekeeper CustomAttributes)
+        [Caption("Кладовщик")]
         Storekeeper,
         
         /// <summary>
@@ -42,6 +44,7 @@ namespace IIS.Shop
         // *** Start programmer edit section *** (PositionList.Manager CustomAttributes)
 
         // *** End programmer edit section *** (PositionList.Manager CustomAttributes)
+        [Caption("Менеджер")]
         Manager,
     }
 }

@@ -12,6 +12,7 @@ namespace IIS.Shop
 {
     using System;
     using System.Xml;
+    using ICSSoft.STORMNET;
     
     
     // *** Start programmer edit section *** (Using statements)
@@ -34,6 +35,7 @@ namespace IIS.Shop
         // *** Start programmer edit section *** (InvoiceStatus.New CustomAttributes)
 
         // *** End programmer edit section *** (InvoiceStatus.New CustomAttributes)
+        [Caption("Новая")]
         New,
         
         /// <summary>
@@ -42,6 +44,7 @@ namespace IIS.Shop
         // *** Start programmer edit section *** (InvoiceStatus.Issued CustomAttributes)
 
         // *** End programmer edit section *** (InvoiceStatus.Issued CustomAttributes)
+        [Caption("Выписанная")]
         Issued,
         
         /// <summary>
@@ -50,6 +53,7 @@ namespace IIS.Shop
         // *** Start programmer edit section *** (InvoiceStatus.Paused CustomAttributes)
 
         // *** End programmer edit section *** (InvoiceStatus.Paused CustomAttributes)
+        [Caption("Приостановленная")]
         Paused,
         
         /// <summary>
@@ -58,6 +62,7 @@ namespace IIS.Shop
         // *** Start programmer edit section *** (InvoiceStatus.Ready CustomAttributes)
 
         // *** End programmer edit section *** (InvoiceStatus.Ready CustomAttributes)
+        [Caption("Готовая")]
         Ready,
         
         /// <summary>
@@ -66,6 +71,7 @@ namespace IIS.Shop
         // *** Start programmer edit section *** (InvoiceStatus.Shipped CustomAttributes)
 
         // *** End programmer edit section *** (InvoiceStatus.Shipped CustomAttributes)
+        [Caption("Отгруженная")]
         Shipped,
     }
 }

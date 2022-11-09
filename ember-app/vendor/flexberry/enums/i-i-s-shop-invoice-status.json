@@ -2,10 +2,10 @@
   "nameSpace": "IIS.Shop",
   "className": "InvoiceStatus",
   "enumObjects": {
-    "New": null,
-    "Issued": null,
-    "Paused": null,
-    "Ready": null,
-    "Shipped": null
+    "New": "Новая",
+    "Issued": "Выписанная",
+    "Paused": "Приостановленная",
+    "Ready": "Готовая",
+    "Shipped": "Отгруженная"
   }
 }

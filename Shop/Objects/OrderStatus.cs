@@ -12,6 +12,7 @@ namespace IIS.Shop
 {
     using System;
     using System.Xml;
+    using ICSSoft.STORMNET;
     
     
     // *** Start programmer edit section *** (Using statements)
@@ -34,6 +35,7 @@ namespace IIS.Shop
         // *** Start programmer edit section *** (OrderStatus.New CustomAttributes)
 
         // *** End programmer edit section *** (OrderStatus.New CustomAttributes)
+        [Caption("Новый")]
         New,
         
         /// <summary>
@@ -42,6 +44,7 @@ namespace IIS.Shop
         // *** Start programmer edit section *** (OrderStatus.Paid CustomAttributes)
 
         // *** End programmer edit section *** (OrderStatus.Paid CustomAttributes)
+        [Caption("Оплаченный")]
         Paid,
         
         /// <summary>
@@ -50,6 +53,7 @@ namespace IIS.Shop
         // *** Start programmer edit section *** (OrderStatus.Canceled CustomAttributes)
 
         // *** End programmer edit section *** (OrderStatus.Canceled CustomAttributes)
+        [Caption("Отмененный")]
         Canceled,
     }
 }
