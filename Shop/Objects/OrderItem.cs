@@ -12,6 +12,7 @@ namespace IIS.Shop
 {
     using System;
     using System.Xml;
+    using ICSSoft.STORMNET.Business;
     using ICSSoft.STORMNET;
     
     
@@ -26,6 +27,7 @@ namespace IIS.Shop
     // *** Start programmer edit section *** (OrderItem CustomAttributes)
 
     // *** End programmer edit section *** (OrderItem CustomAttributes)
+    [BusinessServer("IIS.Shop.OrderItemBS, Shop.BusinessServers", ICSSoft.STORMNET.Business.DataServiceObjectEvents.OnAllEvents)]
     [AutoAltered()]
     [Caption("Строка заказа")]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
@@ -34,10 +36,10 @@ namespace IIS.Shop
             "PriceWTaxes as \'Цена с налогом\'",
             "TotalSum as \'Сумма по позиции\'",
             "Product as \'Товар\'",
-            "Product.Name as \'\'",
-            "Product.ProductCode as \'\'"}, Hidden=new string[] {
-            "Product.Name",
-            "Product.ProductCode"})]
+            "Product.ProductCode as \'\'",
+            "Product.Name as \'\'"}, Hidden=new string[] {
+            "Product.ProductCode",
+            "Product.Name"})]
     [MasterViewDefineAttribute("OrderItemE", "Product", ICSSoft.STORMNET.LookupTypeEnum.Standard, "", "Name")]
     [View("OrderItemInOrderL", new string[] {
             "Amount as \'\'",

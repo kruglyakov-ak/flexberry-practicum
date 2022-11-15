@@ -168,10 +168,22 @@
           "hidden": false,
           "attrs": [
             {
-              "name": "lastName",
+              "name": "firstName",
               "caption": "~",
               "hidden": true,
               "index": 11
+            },
+            {
+              "name": "middleName",
+              "caption": "~",
+              "hidden": true,
+              "index": 12
+            },
+            {
+              "name": "lastName",
+              "caption": "~",
+              "hidden": true,
+              "index": 13
             }
           ],
           "index": 10,

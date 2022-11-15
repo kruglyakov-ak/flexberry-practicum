@@ -71,7 +71,7 @@ namespace IIS.Shop
         // *** Start programmer edit section *** (InvoiceStatus.Shipped CustomAttributes)
 
         // *** End programmer edit section *** (InvoiceStatus.Shipped CustomAttributes)
-        [Caption("Отгруженная")]
+        [Caption("Новая")]
         Shipped,
     }
 }

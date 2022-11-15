@@ -87,6 +87,10 @@
       <Project>{b2095cc9-4483-4910-81d0-e6abb849772b}</Project>
       <Name>Shop.Objects</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BusinessServers\Shop.BusinessServers.csproj">
+      <Project>{8fd7c645-7d54-4be0-9ed4-eb02a16469fd}</Project>
+      <Name>Shop.BusinessServers</Name>
+    </ProjectReference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
     </Reference>

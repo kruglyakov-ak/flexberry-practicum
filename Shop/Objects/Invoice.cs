@@ -41,8 +41,12 @@ namespace IIS.Shop
             "Order as \'Заказ\'",
             "Order.Number as \'\'",
             "ResponsiblePerson as \'Товар выдал\'",
+            "ResponsiblePerson.FirstName as \'\'",
+            "ResponsiblePerson.MiddleName as \'\'",
             "ResponsiblePerson.LastName as \'\'"}, Hidden=new string[] {
             "Order.Number",
+            "ResponsiblePerson.FirstName",
+            "ResponsiblePerson.MiddleName",
             "ResponsiblePerson.LastName"})]
     [AssociatedDetailViewAttribute("InvoiceE", "InvoiceItem", "InvoiceItemE", true, "", "Список товаров к выдаче", true, new string[] {
             ""})]
