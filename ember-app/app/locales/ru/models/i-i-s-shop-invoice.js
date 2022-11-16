@@ -33,6 +33,12 @@ export default {
       },
       responsiblePerson: {
         __caption__: 'Товар выдал',
+        firstName: {
+          __caption__: '~'
+        },
+        middleName: {
+          __caption__: '~'
+        },
         lastName: {
           __caption__: '~'
         }

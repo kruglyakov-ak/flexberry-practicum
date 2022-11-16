@@ -3,7 +3,7 @@
     №
     {{model.number}}
   {{/unless}}
-  </h3>
+</h3>
 
 <form class="ui form flexberry-vertical-form" role="form">
   {{flexberry-error error=error}}
@@ -57,7 +57,7 @@
   <div class="field">
     {{flexberry-field
       readonly=true
-      value=model.totalSum
+      value=model.actualTotalSum
       class=(if (v-get validationObject "totalSum" "isInvalid") "error")
       label=(t "forms.i-i-s-shop-invoice-e.totalSum-caption")
     }}
@@ -68,7 +68,7 @@
   <div class="field">
     {{flexberry-field
       readonly=true
-      value=model.totalWeight
+      value=model.actualTotalWeight
       class=(if (v-get validationObject "totalWeight" "isInvalid") "error")
       label=(t "forms.i-i-s-shop-invoice-e.totalWeight-caption")
     }}
@@ -113,23 +113,22 @@
   </div>
 
   <div class="field">
-    <label>{{t "forms.i-i-s-shop-invoice-e.order-caption"}}</label>
-    {{flexberry-lookup
-      choose="showLookupDialog"
-      remove="removeLookupValue"
-      value=model.order
-      displayAttributeName="number"
-      autocomplete=true
-      relationName="order"
-      projection="OrderL"
-      title=(t "forms.i-i-s-shop-invoice-e.order-caption")
-      readonly=readonly
-      componentName="orderLookup"
-    }}
-    {{flexberry-validationmessage
-      error=(v-get validationObject "order" "messages")
-    }}
-  </div>
+  <label>{{t "forms.i-i-s-shop-invoice-e.order-caption"}}</label>
+  {{flexberry-lookup
+    choose="showLookupDialog"
+    remove="removeLookupValue"
+    value=model.order
+    displayAttributeName="number"
+    autocomplete=true
+    relationName="order"
+    projection="OrderL"
+    title=(t "forms.i-i-s-shop-invoice-e.order-caption")
+    readonly=(or readonly orderItemsLoading)
+    componentName="orderLookup"
+    updateLookupAction="orderChanged"
+  }}
+  {{flexberry-validationmessage error=(v-get validationObject "order" "messages")}}
+</div>
 
   <div class="field">
     <label>{{t "forms.i-i-s-shop-invoice-e.responsiblePerson-caption"}}</label>

@@ -33,6 +33,12 @@ export default {
       },
       responsiblePerson: {
         __caption__: 'responsiblePerson',
+        firstName: {
+          __caption__: 'firstName'
+        },
+        middleName: {
+          __caption__: 'middleName'
+        },
         lastName: {
           __caption__: 'lastName'
         }

@@ -29,6 +29,10 @@ export default EditFormController.extend({
       }
     }
 
+    if (bindingPath === "totalSum") {
+      cellComponent.componentName = "order-item/total-sum";
+    }
+
     return cellComponent;
   },
 });

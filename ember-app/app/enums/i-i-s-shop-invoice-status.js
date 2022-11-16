@@ -5,5 +5,5 @@ export default createEnum({
   Issued: 'Выписанная',
   Paused: 'Приостановленная',
   Ready: 'Готовая',
-  Shipped: 'Отгруженная'
+  Shipped: 'Новая'
 });

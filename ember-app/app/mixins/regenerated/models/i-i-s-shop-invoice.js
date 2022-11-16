@@ -1,4 +1,5 @@
 import Mixin from '@ember/object/mixin';
+import $ from 'jquery';
 import DS from 'ember-data';
 import { validator } from 'ember-cp-validations';
 import { attr, belongsTo, hasMany } from 'ember-flexberry-data/utils/attributes';
@@ -97,7 +98,9 @@ export let defineProjections = function (modelClass) {
       number: attr('~', { index: 9, hidden: true })
     }, { index: 8, displayMemberPath: 'number' }),
     responsiblePerson: belongsTo('i-i-s-shop-employee', 'Товар выдал', {
-      lastName: attr('~', { index: 11, hidden: true })
+      firstName: attr('~', { index: 11, hidden: true }),
+      middleName: attr('~', { index: 12, hidden: true }),
+      lastName: attr('~', { index: 13, hidden: true })
     }, { index: 10, displayMemberPath: 'lastName' }),
     invoiceItem: hasMany('i-i-s-shop-invoice-item', 'Список товаров к выдаче', {
       amount: attr('Количество', { index: 0 }),
