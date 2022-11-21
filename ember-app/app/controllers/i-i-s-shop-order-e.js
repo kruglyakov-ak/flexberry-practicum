@@ -2,9 +2,17 @@ import EditFormController from "ember-flexberry/controllers/edit-form";
 import { SimplePredicate } from "ember-flexberry-data/query/predicate";
 import { set } from "@ember/object";
 import { generateNotOrPredicateByList } from "../utils/generate-predicate-by-list";
+import { inject } from '@ember/service';
 
 export default EditFormController.extend({
   parentRoute: "i-i-s-shop-order-l",
+
+  /**
+    Сервис для событий лукапа
+      @property lookupEventsService
+      @type Service
+    */
+  lookupEventsService: inject('lookup-events'),
 
   init() {
     this._super(...arguments);
@@ -26,6 +34,10 @@ export default EditFormController.extend({
       autocomplete: true,
       lookupLimitPredicate: undefined,
     });
+
+
+     // Событие закрытия окна лукапа
+     this.get('lookupEventsService').on('lookupDialogOnHidden', this, this._setLookupPredicate);
   },
 
   actions: {
@@ -65,5 +77,21 @@ export default EditFormController.extend({
     }
 
     return cellComponent;
+  },
+
+  /**
+  * Обновление лукапов
+  */
+   _setLookupPredicate(componentName, record) {
+    switch (componentName) {
+      case '(orderItemGroupEdit_flexberry-lookup_product)':
+        this.setProductLookupPredicate(record);
+        break;
+    }
+  },
+
+  willDestroy() {
+    this._super(...arguments);
+    this.get('lookupEventsService').off('lookupDialogOnHidden', this, this._setLookupPredicate);
   },
 });
