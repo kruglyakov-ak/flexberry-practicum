@@ -14,6 +14,14 @@ export default EditFormController.extend({
     */
   lookupEventsService: inject('lookup-events'),
 
+
+  /**
+  Сервис для событий groupedit
+    @property lookupEventsService
+    @type Service
+  */
+    groupEditEventsService: inject('objectlistview-events'),
+
   init() {
     this._super(...arguments);
 
@@ -38,6 +46,8 @@ export default EditFormController.extend({
 
      // Событие закрытия окна лукапа
      this.get('lookupEventsService').on('lookupDialogOnHidden', this, this._setLookupPredicate);
+         // Событие удаления строки детейла
+    this.get('groupEditEventsService').on('olvRowDeleted', this, this._setLookupPredicate);
   },
 
   actions: {
@@ -47,19 +57,26 @@ export default EditFormController.extend({
     },
   },
 
-  setProductLookupPredicate() {
-    let productIds = [];
-    let orderItems = this.get("model.orderItem");
-    if (orderItems) {
-      orderItems.forEach((item) => {
-        let product = item.get("product");
-        productIds.push(product.get("id"));
-      });
+  setProductLookupPredicate(record) {
+    let recordId;
+    if (record) {
+    recordId = record.get('product.id');
     }
 
-    let predicate = generateNotOrPredicateByList("id", "eq", productIds);
-    this.set("productProperties.lookupLimitPredicate", predicate);
-  },
+    let productIds = [];
+    let orderItems = this.get('model.orderItem');
+    if (orderItems) {
+    orderItems.forEach(item => {
+        let product = item.get('product');
+        if (product && product.get('id') !== recordId) {
+        productIds.push(product.get('id'));
+        }
+    });
+    }
+
+    let predicate = generateNotOrPredicateByList('id', 'eq', productIds);
+    this.set('productProperties.lookupLimitPredicate', predicate);
+},
 
   getCellComponent(attr, bindingPath, model) {
     let cellComponent = this._super(...arguments);
@@ -85,6 +102,7 @@ export default EditFormController.extend({
    _setLookupPredicate(componentName, record) {
     switch (componentName) {
       case '(orderItemGroupEdit_flexberry-lookup_product)':
+      case 'orderItemGroupEdit':
         this.setProductLookupPredicate(record);
         break;
     }
@@ -93,5 +111,7 @@ export default EditFormController.extend({
   willDestroy() {
     this._super(...arguments);
     this.get('lookupEventsService').off('lookupDialogOnHidden', this, this._setLookupPredicate);
+
+    this.get('groupEditEventsService').off('olvRowDeleted', this, this._setLookupPredicate);
   },
 });
