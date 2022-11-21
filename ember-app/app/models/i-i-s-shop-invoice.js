@@ -17,16 +17,17 @@ const Validations = buildValidations($.extend({}, ParentValidationRules, Validat
 });
 
 let Model = DocumentModel.extend(InvoiceMixin, Validations, {
-  actualTotalSum: computed("invoiceItem.@each.{totalSum}", function () {
+  actualTotalSum: computed("invoiceItem.@each.{amount,price}", function () {
     return this.get("invoiceItem").reduce((sum, item) => {
-      const totalSum = Number(item.get("totalSum") || 0);
-      if (Number.isNaN(totalSum)) {
+      const price = Number(item.get("price") || 0);
+      const amount = Number(item.get("amount") || 0);
+      if (Number.isNaN(price) || Number.isNaN(amount)) {
         throw new Error(
-          `Invalid 'totalSum' for invoice item: '${item}'.`
+          `Invalid 'price' or 'amount' for order item: '${item}'.`
         );
       }
 
-      return sum + totalSum;
+      return sum + price * amount;
     }, 0);
   }),
   actualTotalWeight: computed("invoiceItem.@each.{weight}", function () {
