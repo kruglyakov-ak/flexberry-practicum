@@ -1,7 +1,17 @@
 import EditFormController from 'ember-flexberry/controllers/edit-form';
+import { SimplePredicate } from "ember-flexberry-data/query/predicate";
 
 export default EditFormController.extend({
   parentRoute: 'i-i-s-shop-storehouse-l',
+
+  init() {
+    this._super(...arguments);
+
+    this.set(
+      "storekeeperLimitPredicate",
+      new SimplePredicate("position", "eq", "Storekeeper")
+    );
+  },
 
   getCellComponent(attr, bindingPath, model) {
     let cellComponent = this._super(...arguments);

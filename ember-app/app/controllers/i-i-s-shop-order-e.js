@@ -1,8 +1,19 @@
 import EditFormController from "ember-flexberry/controllers/edit-form";
+import { SimplePredicate } from "ember-flexberry-data/query/predicate";
 import { set } from "@ember/object";
 
 export default EditFormController.extend({
   parentRoute: "i-i-s-shop-order-l",
+
+  init() {
+    this._super(...arguments);
+
+    // Ограничение на лукап менеджера
+    this.set(
+      "managerLimitPredicate",
+      new SimplePredicate("position", "eq", "Manager")
+    );
+  },
 
   actions: {
     configurateOrderItemRow(rowConfig) {

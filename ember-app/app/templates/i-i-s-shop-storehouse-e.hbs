@@ -53,6 +53,7 @@
       title=(t "forms.i-i-s-shop-storehouse-e.storekeeper-caption")
       readonly=readonly
       componentName="storekeeperLookup"
+      lookupLimitPredicate=storekeeperLimitPredicate
     }}
     {{flexberry-validationmessage
       error=(v-get validationObject "storekeeper" "messages")
