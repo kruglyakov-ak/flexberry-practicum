@@ -55,6 +55,16 @@ export default EditFormController.extend({
       let readonlyColumns = ["priceWTaxes", "totalSum"];
       set(rowConfig, "readonlyColumns", readonlyColumns);
     },
+
+     /**
+      * Очистка лукапа
+      */
+      removeLookupValue(lookupProperties) {
+        this._super(...arguments);
+        if (lookupProperties.relationName === 'product') {
+          this.setProductLookupPredicate();
+        }
+    }
   },
 
   setProductLookupPredicate(record) {
