@@ -37,8 +37,10 @@ export let defineProjections = function (modelClass) {
   modelClass.defineProjection('StoreProductE', 'i-i-s-shop-store-product', {
     amount: attr('Количество', { index: 0 }),
     product: belongsTo('i-i-s-shop-product', 'Товар', {
-      name: attr('~', { index: 2, hidden: true }),
-      productCode: attr('~', { index: 3, hidden: true })
-    }, { index: 1, displayMemberPath: 'name' })
+      name: attr('~', { index: 2, hidden: true })
+    }, { index: 1, displayMemberPath: 'name' }),
+    storehouse: belongsTo('i-i-s-shop-storehouse', '~', {
+      number: attr('~', { index: 3, hidden: true })
+    }, { index: -1, hidden: true })
   });
 };

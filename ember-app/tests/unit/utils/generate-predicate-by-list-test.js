@@ -1,7 +1,7 @@
 import generatePredicateByList from 'ember-app/utils/generate-predicate-by-list';
 import { module, test } from 'qunit';
 
-module('Unit | Utility | generate-predicate-by-list', function(hooks) {
+module('Unit | Utility | generate-predicate-by-list', function() {
 
   // Replace this with your real tests.
   test('it works', function(assert) {

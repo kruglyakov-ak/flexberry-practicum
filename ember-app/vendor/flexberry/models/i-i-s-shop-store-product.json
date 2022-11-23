@@ -58,12 +58,6 @@
               "caption": "~",
               "hidden": true,
               "index": 2
-            },
-            {
-              "name": "productCode",
-              "caption": "~",
-              "hidden": true,
-              "index": 3
             }
           ],
           "index": 1,
@@ -71,6 +65,27 @@
           "caption": "Товар",
           "name": "product",
           "relatedTo": "i-i-s-shop-product",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Storehouse",
+          "belongsTo": [],
+          "hidden": true,
+          "attrs": [
+            {
+              "name": "number",
+              "caption": "~",
+              "hidden": true,
+              "index": 3
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "~",
+          "name": "storehouse",
+          "relatedTo": "i-i-s-shop-storehouse",
           "inverse": null
         }
       ],

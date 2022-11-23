@@ -12,6 +12,7 @@ namespace IIS.Shop
 {
     using System;
     using System.Xml;
+    using ICSSoft.STORMNET.Business;
     using ICSSoft.STORMNET;
     
     
@@ -26,6 +27,7 @@ namespace IIS.Shop
     // *** Start programmer edit section *** (Order CustomAttributes)
 
     // *** End programmer edit section *** (Order CustomAttributes)
+    [BusinessServer("IIS.Shop.OrderBS, Shop.BusinessServers", ICSSoft.STORMNET.Business.DataServiceObjectEvents.OnAllEvents)]
     [AutoAltered()]
     [Caption("Заказ")]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
@@ -174,7 +176,7 @@ namespace IIS.Shop
 
         // *** End programmer edit section *** (Order.TotalSum CustomAttributes)
         [ICSSoft.STORMNET.NotStored()]
-        [DataServiceExpression(typeof(ICSSoft.STORMNET.Business.SQLDataService), "SELECT SUM(PriceWTaxes * Amount) FROM OrderItem WHERE OrderItem.Заказ = STORMMain" +
+        [DataServiceExpression(typeof(SQLDataService), "SELECT SUM(PriceWTaxes * Amount) FROM OrderItem WHERE OrderItem.Заказ = STORMMain" +
             "ObjectKey")]
         public virtual double TotalSum
         {

@@ -12,6 +12,12 @@ export default {
         productCode: {
           __caption__: '~'
         }
+      },
+      storehouse: {
+        __caption__: '~',
+        number: {
+          __caption__: '~'
+        }
       }
     }
   },

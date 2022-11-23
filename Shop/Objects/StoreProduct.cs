@@ -32,8 +32,10 @@ namespace IIS.Shop
     [View("StoreProductE", new string[] {
             "Amount as \'Количество\'",
             "Product as \'Товар\'",
-            "Product.Name as \'\'"}, Hidden=new string[] {
-            "Product.Name"})]
+            "Product.Name as \'\'",
+            "Storehouse.Number as \'\'"}, Hidden=new string[] {
+            "Product.Name",
+            "Storehouse.Number"})]
     [MasterViewDefineAttribute("StoreProductE", "Product", ICSSoft.STORMNET.LookupTypeEnum.Standard, "", "Name")]
     public class StoreProduct : ICSSoft.STORMNET.DataObject
     {
