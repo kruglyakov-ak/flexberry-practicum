@@ -4,7 +4,6 @@ import DS from 'ember-data';
 import { validator } from 'ember-cp-validations';
 import { attr, belongsTo, hasMany } from 'ember-flexberry-data/utils/attributes';
 import  InvoiceStatusEnum from '../../../enums/i-i-s-shop-invoice-status';
-import { computed } from '@ember/object';
 
 export let Model = Mixin.create({
   status: DS.attr('i-i-s-shop-invoice-status', { defaultValue: InvoiceStatusEnum.New }),
@@ -30,12 +29,6 @@ export let ValidationRules = {
     validators: [
       validator('ds-error'),
       validator('date'),
-      validator('presence', {
-        presence: true,
-        disabled: computed('model.status', function() {
-          return this.get('model.status') !== InvoiceStatusEnum.Shipped;
-        })
-      }),
     ],
   },
   totalSum: {
