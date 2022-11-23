@@ -1,6 +1,7 @@
 import $ from "jquery";
 import { buildValidations } from "ember-cp-validations";
 import { computed } from "@ember/object";
+import OrderStatusEnum from '../enums/i-i-s-shop-order-status';
 
 import {
   defineBaseModel,
@@ -33,6 +34,12 @@ let Model = DocumentModel.extend(OrderMixin, Validations, {
       return sum + priceWTaxes * amount;
     }, 0);
   }),
+  isPaid: computed('status', function() {
+    const status = this.get('status');
+    const dirtyAttributes = this.get('hasDirtyAttributes');
+
+    return status === OrderStatusEnum.Paid && !dirtyAttributes;
+  })
 });
 
 defineBaseModel(Model);
